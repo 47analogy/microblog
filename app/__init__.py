@@ -1,6 +1,6 @@
 
 # from app import routes
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -12,4 +12,5 @@ app = Flask(__name__)
 @app.route('/index')
 # view functions are similar to handlers
 def index():
-    return "Hello, World!"
+    user = {'username': 'Miguel'}
+    return render_template('index.html', title='Home', user=user)
